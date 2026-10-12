@@ -1,0 +1,8 @@
+Panel (a): direct Monte Carlo vs exact density (theta = xi = 1/2)
+  N=100, u=50, b=2.6 (beta=0.0520), start r=50
+  MC walkers=400000, absorbed=400000 (100.00%), through the shortcut 225866, at the ends 174134, pi_sc(MC)=0.56466
+  pi_sc(exact, closed form)=0.56522; binomial s.e. 0.00078
+  MC histogram bins: 59, nonempty 55, min nonempty count 1, median 4060
+  MC probability inside displayed bins=0.967777
+  histogram and route counts identical to the stored run: True
+wrote outputs/data/dpma_channel_mc_data.npz, .json and dpma_channel_mc_summary.json

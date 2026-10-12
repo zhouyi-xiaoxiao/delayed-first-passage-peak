@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this reproduction package, please cite both the article and this archived software/data version."
+title: "Reproduction package for 'Geometry-controlled disappearance of a delayed first-passage peak under localized absorption'"
+type: software
+authors:
+  - family-names: Zhouyi
+    given-names: Xiaoxiao
+    affiliation: University of Bristol
+    email: xiaoxiao.zhouyi@bristol.ac.uk
+version: 1.0.0
+date-released: 2026-10-12
+repository-code: "https://github.com/zhouyi-xiaoxiao/delayed-first-passage-peak"
+url: "https://github.com/zhouyi-xiaoxiao/delayed-first-passage-peak/releases/tag/v1.0.0"
+license:
+  - MIT
+  - CC-BY-4.0
+keywords:
+  - first-passage time
+  - partially absorbing sink
+  - fold bifurcation
+  - absorption-time density
+  - random walk
+  - Brownian dynamics
+  - reproducibility

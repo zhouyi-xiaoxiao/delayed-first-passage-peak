@@ -1,0 +1,15 @@
+Independent endpoint-constant resolution (bisection on the actual fold, no reference table)
+    theta  b_c(theta)   b_c*theta
+    0.350     2.26550    0.792926
+    0.300     2.63014    0.789041
+    0.270     2.92232    0.789026
+    0.240     3.28761    0.789026
+    0.220     3.58648    0.789026
+    0.200     3.94513    0.789026
+
+  smallest clean theta=0.2: b_c*theta=0.789026
+  linear extrapolation theta->0: B* ~= 0.789027
+  (reference value 0.7890261736; independent value agrees to ~6 digits)
+
+Note: for theta<~0.15 the fold eigenmode (w~1.78/theta) is too high-k for clean resolution;
+we therefore quote B* ~ 0.78903 (5-6 digits), resolved independently over theta in [0.20,0.35].

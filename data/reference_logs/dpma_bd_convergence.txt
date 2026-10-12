@@ -1,0 +1,17 @@
+Exact delta-sink references (theta=1/2, xi=0.44, b=2.5): located tau_v=0.02534, tau_p=0.04620; fixed window centres=(0.0253,0.0462); R_window=1.035862 (P_peak=0.099215, P_valley=0.052451)
+
+BD convergence sweeps (3 x 60000 walkers per cell, tau_max=0.6):
+     ell        dt  R_BD (mean+/-sem)  R_exact  tau_peak |R_BD-R_exact|/sem peak offset (bins)   (exact tau_p 0.0462)
+   0.040   1.5e-05     1.0233 +/- 0.0113   1.0359    0.0452               1.11               0.48
+   0.020   1.5e-05     1.0299 +/- 0.0166   1.0359    0.0458               0.36               0.19
+   0.010   1.5e-05     1.0112 +/- 0.0185   1.0359    0.0493               1.33               1.48
+   0.020   3.0e-05     1.0261 +/- 0.0091   1.0359    0.0478               1.07               0.78
+   0.020   7.5e-06     1.0329 +/- 0.0060   1.0359    0.0443               0.50               0.97
+
+largest late-peak offset 1.48 bins (bin width 0.0439 in log tau); largest ratio discrepancy 1.33 SEM
+The late-peak location stays within two histogram bins of the exact tau_p in every cell. The
+ratio observable is consistent with the same-window delta-sink comparator at the stated
+three-seed sampling resolution. Gate-width and time-step changes leave the fold morphology
+unchanged; this is a sensitivity check, while the deterministic finite-gate calculation
+separately quantifies the ell -> 0 systematic limit.
+Regression gates: maximum ratio discrepancy <= 1.5 SEM; every cell's mean peak <= 2 bins.

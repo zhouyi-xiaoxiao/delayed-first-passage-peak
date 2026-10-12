@@ -1,0 +1,11 @@
+{
+  "walkers": 400000,
+  "seed": 12345,
+  "absorbed": 400000,
+  "absorbed_through_shortcut": 225866,
+  "absorbed_at_ends": 174134,
+  "pi_sc_monte_carlo": 0.56466,
+  "pi_sc_exact": 0.56522,
+  "histogram_bins": 59,
+  "median_nonempty_bin_count": 4060
+}

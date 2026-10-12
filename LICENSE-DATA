@@ -1,0 +1,23 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Xiaoxiao Zhouyi.
+
+The following material in this archive is licensed under the Creative Commons
+Attribution 4.0 International License:
+  - the stored data (data/, including data/reference_logs/);
+  - the reference figures (figures/);
+  - the generated outputs (outputs/, when produced);
+  - the documentation: README.md, formal/README.md, formal/axioms_report.txt,
+    CITATION.cff, MANIFEST.csv and SHA256SUMS.
+You are free to share and adapt this material for any purpose, provided that
+appropriate credit is given, a link to the license is provided, and changes are
+indicated.
+
+The source code is licensed under the MIT License (see LICENSE): code/,
+reproduce_all.py, the Lean sources in formal/ (formal/FormalLean.lean,
+formal/FormalLean/*.lean, formal/AxiomsReport.lean) and the build
+configuration (requirements.txt, .gitignore, formal/lakefile.toml,
+formal/lean-toolchain, formal/lake-manifest.json).
+
+License summary and legal code:
+https://creativecommons.org/licenses/by/4.0/

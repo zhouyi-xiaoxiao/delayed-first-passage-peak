@@ -1,0 +1,1090 @@
+{
+  "status": "VERIFIED",
+  "method": "Krawczyk inclusion using Arb validated complex integration on [delta,V], plus explicit small-v and Gaussian-tail enclosures",
+  "integral_definition": "I_n=-pi^{-1} integral_0^infinity v (v^2/2)^n exp(-T v^2/2) Im fhat(-v^2/2+i0;B,X) dv; f^(n)=(-1)^n I_n",
+  "precision_bits": 192,
+  "delta": "[0.0010000000000000000000 +/- 1e-27]",
+  "V": "70.000000000000000000",
+  "software": {
+    "python": "3.12.13",
+    "python_flint": "0.9.0",
+    "arb_integrator": "acb_calc_integrate through acb.integral"
+  },
+  "certificates": [
+    {
+      "label": "start_between_boundary_and_gate",
+      "status": "VERIFIED",
+      "branch": "X_lt_1",
+      "coordinate_order": [
+        "log_B",
+        "log_T",
+        "X"
+      ],
+      "box_radius_each_coordinate": "1e-7",
+      "box": {
+        "log_B": {
+          "arb": "[1.053884037693801471501009382176664071776 +/- 1.01e-7]",
+          "decimal_outer_ball": {
+            "mid_integer": "10538840376938014715010093821766640717756033454191233188090689",
+            "radius_integer": "1000000004049945870604179054906022138442792089304432641",
+            "exponent": -61,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        },
+        "log_T": {
+          "arb": "[-2.754675811942949554130269052478291912021 +/- 1.01e-7]",
+          "decimal_outer_ball": {
+            "mid_integer": "-27546758119429495541302690524782919120212842032133639280753102",
+            "radius_integer": "1000000004049945870604179054906022138442792089304432641",
+            "exponent": -61,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        },
+        "X": {
+          "arb": "[0.7583136631287805000000000000000000000000 +/- 1.01e-7]",
+          "decimal_outer_ball": {
+            "mid_integer": "75831366312878049999999999999999999999999999999999999999993833",
+            "radius_integer": "10000000031935972549806031262710505567730950074747846657",
+            "exponent": -62,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        },
+        "B": {
+          "arb": "[2.868771925558731616945351561298593878746 +/- 2.87e-7]",
+          "decimal_outer_ball": {
+            "mid_integer": "28687719255587316169453515612985938787460327148437500000000000",
+            "radius_integer": "2868824130152016600689505640459544801025577467642904576",
+            "exponent": -61,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        },
+        "T": {
+          "arb": "[0.06362964429621741080378427568575716577470 +/- 6.37e-9]",
+          "decimal_outer_ball": {
+            "mid_integer": "6362964429621741080378427568575716577470302581787109375000000",
+            "radius_integer": "636308023380032971791246927619915276895706448524214272",
+            "exponent": -62,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        }
+      },
+      "center_function": {
+        "I1": {
+          "arb": "[-6.397608531335735501417227714616444069818e-15 +/- 3.99e-14]",
+          "decimal_outer_ball": {
+            "mid_integer": "-6397608531335735501417227714616444069818463882494623576465202",
+            "radius_integer": "39814430071672595113628591515292784837754535652509636192370689",
+            "exponent": -75,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": true
+        },
+        "I2": {
+          "arb": "[-1.277531912406672320055604627570826048529e-13 +/- 1.33e-20]",
+          "decimal_outer_ball": {
+            "mid_integer": "-12775319124066723200556046275708260485290614754577068520265839",
+            "radius_integer": "1327147668641788921270463677690724947745067007612026881",
+            "exponent": -74,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        },
+        "I3": {
+          "arb": "[-4.658509451902676581022559409953099690136e-12 +/- 5.04e-27]",
+          "decimal_outer_ball": {
+            "mid_integer": "-46585094519026765810225594099530996901358203821588695273121440",
+            "radius_integer": "50333846911821487237602140638044961495557603329",
+            "exponent": -73,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        }
+      },
+      "krawczyk_image": {
+        "log_B": {
+          "arb": "[1.053884037693801675674458236699839437617 +/- 3.12e-11]",
+          "decimal_outer_ball": {
+            "mid_integer": "10538840376938016756744582366998394376172895694634612238793477",
+            "radius_integer": "311449152589035627826358437588899261977126819069953",
+            "exponent": -61,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        },
+        "log_T": {
+          "arb": "[-2.754675811942949459342023453977778096833 +/- 1.51e-11]",
+          "decimal_outer_ball": {
+            "mid_integer": "-27546758119429494593420234539777780968330013964015935856830453",
+            "radius_integer": "150941448001245376359200119437646378538590751686657",
+            "exponent": -61,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        },
+        "X": {
+          "arb": "[0.7583136631287805176057809169670595023885 +/- 1.28e-12]",
+          "decimal_outer_ball": {
+            "mid_integer": "75831366312878051760578091696705950238853628786461769095688595",
+            "radius_integer": "127667338344093906111954939218100155886521674629121",
+            "exponent": -62,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        },
+        "strictly_inside_box": [
+          true,
+          true,
+          true
+        ],
+        "contraction_row_sum_bounds": [
+          {
+            "arb": "[0.0003114091262444188585341326585848725772010 +/- 2.95e-45]",
+            "decimal_outer_ball": {
+              "mid_integer": "31140912624441885853413265858487257720099705693428404629230499",
+              "radius_integer": "1",
+              "exponent": -65,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          {
+            "arb": "[0.0001509340711122422864799773488593027936933 +/- 4.00e-44]",
+            "decimal_outer_ball": {
+              "mid_integer": "15093407111224228647997734885930279369326001415174687281250953",
+              "radius_integer": "1",
+              "exponent": -65,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          {
+            "arb": "[1.276620588081795369796691427115252199902e-5 +/- 2.93e-45]",
+            "decimal_outer_ball": {
+              "mid_integer": "12766205880817953697966914271152521999017070974957732687471434",
+              "radius_integer": "2",
+              "exponent": -66,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          }
+        ],
+        "preconditioner_determinant": {
+          "arb": "[-3.571528497879979628018973542558701626183e-10 +/- 6.28e-51]",
+          "decimal_outer_ball": {
+            "mid_integer": "-35715284978799796280189735425587016261830627862334151825675946",
+            "radius_integer": "9275",
+            "exponent": -71,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        }
+      },
+      "box_enclosures": {
+        "density_I0": {
+          "arb": "[2.082020157948136329650878906250000000000 +/- 6.77e-6]",
+          "decimal_outer_ball": {
+            "mid_integer": "20820201579481363296508789062500000000000000000000000000000000",
+            "radius_integer": "67697853611584763345649117194188203488545934452979662848",
+            "exponent": -61,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        },
+        "fourth_time_derivative_I4": {
+          "arb": "[-702828.9965820312500000000000000000000000 +/- 13.8]",
+          "decimal_outer_ball": {
+            "mid_integer": "-7028289965820312500000000000000000000000000000000000000000000",
+            "radius_integer": "137309570655034634684389946444987784842567176205738442752",
+            "exponent": -55,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        },
+        "control_unfolding_determinant": {
+          "arb": "[62608.99228819063048234738744213245809078 +/- 1.62]",
+          "decimal_outer_ball": {
+            "mid_integer": "62608992288190630482347387442132458090782165527343750000000000",
+            "radius_integer": "1614176812505010935207247978069947442493383555769375391744",
+            "exponent": -57,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        },
+        "full_cusp_jacobian_determinant": {
+          "arb": "[-2799921658.786271872996880505470717829324 +/- 2.08e+5]",
+          "decimal_outer_ball": {
+            "mid_integer": "-27999216587862718729968805054707178293239562076119952051737347",
+            "radius_integer": "2072906071526732738605693343229481259307663200852000112641",
+            "exponent": -52,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        }
+      },
+      "sign_checks": {
+        "density_positive": true,
+        "fourth_derivative_negative": true,
+        "unfolding_determinant_expected_sign": true,
+        "full_cusp_jacobian_invertible": true,
+        "preconditioner_invertible": true,
+        "weighted_infinity_contraction": true
+      },
+      "tail_bounds_at_box": {
+        "0": {
+          "small_I": {
+            "arb": "[1.592577195885910905719068810927546480782e-7 +/- 6.96e-48]",
+            "decimal_outer_ball": {
+              "mid_integer": "15925771958859109057190688109275464807819304895750210967298998",
+              "radius_integer": "2",
+              "exponent": -68,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "small_logB": {
+            "arb": "[1.016953814499928263712092096674588115989e-11 +/- 3.78e-51]",
+            "decimal_outer_ball": {
+              "mid_integer": "10169538144999282637120920966745881159893778768712487559813436",
+              "radius_integer": "2",
+              "exponent": -72,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "small_X": {
+            "arb": "[1.964585913094892064735948985414449622330e-10 +/- 2.52e-50]",
+            "decimal_outer_ball": {
+              "mid_integer": "19645859130948920647359489854144496223297480422427975685861698",
+              "radius_integer": "2",
+              "exponent": -71,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_I": {
+            "arb": "[1.159903780201372964681559178715717106725e-67 +/- 9.95e-108]",
+            "decimal_outer_ball": {
+              "mid_integer": "11599037802013729646815591787157171067250994782043821308605488",
+              "radius_integer": "2",
+              "exponent": -128,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_logB": {
+            "arb": "[1.765606927242987864043320030324278921289e-68 +/- 3.76e-109]",
+            "decimal_outer_ball": {
+              "mid_integer": "17656069272429878640433200303242789212890375396098334710681460",
+              "radius_integer": "2",
+              "exponent": -129,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_X": {
+            "arb": "[8.145285137514912339723321050744726390033e-66 +/- 3.11e-106]",
+            "decimal_outer_ball": {
+              "mid_integer": "81452851375149123397233210507447263900333100409104533011356870",
+              "radius_integer": "2",
+              "exponent": -127,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          }
+        },
+        "1": {
+          "small_I": {
+            "arb": "[3.981442989714777264297672027318866201955e-14 +/- 1.74e-54]",
+            "decimal_outer_ball": {
+              "mid_integer": "39814429897147772642976720273188662019548262239375527418260814",
+              "radius_integer": "2",
+              "exponent": -75,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "small_logB": {
+            "arb": "[3.050861443499784791136276290023764347968e-18 +/- 1.34e-58]",
+            "decimal_outer_ball": {
+              "mid_integer": "30508614434997847911362762900237643479681336306137462679446892",
+              "radius_integer": "2",
+              "exponent": -79,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "small_X": {
+            "arb": "[5.893757739284676194207846956243348866989e-17 +/- 2.45e-57]",
+            "decimal_outer_ball": {
+              "mid_integer": "5893757739284676194207846956243348866989244126728392705760131",
+              "radius_integer": "2",
+              "exponent": -77,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_I": {
+            "arb": "[2.859993247511172231117600826221723434685e-64 +/- 4.64e-104]",
+            "decimal_outer_ball": {
+              "mid_integer": "28599932475111722311176008262217234346854632431716597477019460",
+              "radius_integer": "2",
+              "exponent": -125,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_logB": {
+            "arb": "[4.353485156154263622582895924941579877657e-65 +/- 3.66e-105]",
+            "decimal_outer_ball": {
+              "mid_integer": "43534851561542636225828959249415798776566343293499173351016985",
+              "radius_integer": "2",
+              "exponent": -126,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_X": {
+            "arb": "[2.008436613139668733158687196073312581129e-62 +/- 4.90e-102]",
+            "decimal_outer_ball": {
+              "mid_integer": "20084366131396687331586871960733125811294893037961995246084184",
+              "radius_integer": "2",
+              "exponent": -123,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          }
+        },
+        "2": {
+          "small_I": {
+            "arb": "[1.327147663238259088099224009106288733985e-20 +/- 5.80e-61]",
+            "decimal_outer_ball": {
+              "mid_integer": "13271476632382590880992240091062887339849420746458509139422803",
+              "radius_integer": "2",
+              "exponent": -81,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "small_logB": {
+            "arb": "[1.089593372678494568262955817865630124274e-24 +/- 3.34e-64]",
+            "decimal_outer_ball": {
+              "mid_integer": "10895933726784945682629558178656301242743334395049093814096249",
+              "radius_integer": "2",
+              "exponent": -85,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "small_X": {
+            "arb": "[2.104913478315955783645659627229767452496e-23 +/- 1.59e-63]",
+            "decimal_outer_ball": {
+              "mid_integer": "21049134783159557836456596272297674524961586166887116806300713",
+              "radius_integer": "2",
+              "exponent": -84,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_I": {
+            "arb": "[7.052217443692280052541670375088023069825e-61 +/- 1.80e-101]",
+            "decimal_outer_ball": {
+              "mid_integer": "7052217443692280052541670375088023069825179060682980403794551",
+              "radius_integer": "2",
+              "exponent": -121,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_logB": {
+            "arb": "[1.073489386235572744490830139789032767220e-61 +/- 2.35e-101]",
+            "decimal_outer_ball": {
+              "mid_integer": "10734893862355727444908301397890327672202345240558658796957810",
+              "radius_integer": "2",
+              "exponent": -122,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_X": {
+            "arb": "[4.952536915501545479966556025490520275882e-59 +/- 1.65e-99]",
+            "decimal_outer_ball": {
+              "mid_integer": "49525369155015454799665560254905202758818351525543943748089687",
+              "radius_integer": "2",
+              "exponent": -120,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          }
+        },
+        "3": {
+          "small_I": {
+            "arb": "[4.976803737143471580372090034148582752444e-27 +/- 4.68e-67]",
+            "decimal_outer_ball": {
+              "mid_integer": "49768037371434715803720900341485827524435327799219409272857420",
+              "radius_integer": "2",
+              "exponent": -88,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "small_logB": {
+            "arb": "[4.237307560416367765467050402810783816622e-31 +/- 4.08e-71]",
+            "decimal_outer_ball": {
+              "mid_integer": "42373075604163677654670504028107838166224078202968698165943317",
+              "radius_integer": "2",
+              "exponent": -92,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "small_X": {
+            "arb": "[8.185774637895383603066454105893540093041e-30 +/- 3.84e-70]",
+            "decimal_outer_ball": {
+              "mid_integer": "8185774637895383603066454105893540093040616842678323202452539",
+              "radius_integer": "2",
+              "exponent": -90,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_I": {
+            "arb": "[1.739018680056563215081177021207835391296e-57 +/- 2.58e-97]",
+            "decimal_outer_ball": {
+              "mid_integer": "17390186800565632150811770212078353912962575212420948225316268",
+              "radius_integer": "2",
+              "exponent": -118,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_logB": {
+            "arb": "[2.647136323307579452511488010019308031314e-58 +/- 4.22e-98]",
+            "decimal_outer_ball": {
+              "mid_integer": "26471363233075794525114880100193080313144214694259622605833356",
+              "radius_integer": "2",
+              "exponent": -119,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_X": {
+            "arb": "[1.221280130787185468486683327991213823119e-55 +/- 1.48e-95]",
+            "decimal_outer_ball": {
+              "mid_integer": "12212801307871854684866833279912138231191473056647852124961133",
+              "radius_integer": "2",
+              "exponent": -116,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          }
+        },
+        "4": {
+          "small_I": {
+            "arb": "[1.990721494857388632148836013659433100977e-33 +/- 4.14e-73]",
+            "decimal_outer_ball": {
+              "mid_integer": "19907214948573886321488360136594331009774131119687763709146630",
+              "radius_integer": "2",
+              "exponent": -94,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "small_logB": {
+            "arb": "[1.733444001988514085872884255695320652255e-37 +/- 3.79e-77]",
+            "decimal_outer_ball": {
+              "mid_integer": "17334440019885140858728842556953206522546213810305376522439475",
+              "radius_integer": "2",
+              "exponent": -98,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "small_X": {
+            "arb": "[3.348725988229929655799913043320084583517e-36 +/- 3.85e-76]",
+            "decimal_outer_ball": {
+              "mid_integer": "33487259882299296557999130433200845835166159810956776737324747",
+              "radius_integer": "2",
+              "exponent": -97,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_I": {
+            "arb": "[4.288455344735824088385141580782456716907e-54 +/- 1.34e-94]",
+            "decimal_outer_ball": {
+              "mid_integer": "42884553447358240883851415807824567169068666980037878398624146",
+              "radius_integer": "2",
+              "exponent": -115,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_logB": {
+            "arb": "[6.527891876103072670008233471841256107311e-55 +/- 3.57e-95]",
+            "decimal_outer_ball": {
+              "mid_integer": "6527891876103072670008233471841256107311356665868762072444008",
+              "radius_integer": "2",
+              "exponent": -115,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_X": {
+            "arb": "[3.011764912136326863941470302226050059012e-52 +/- 2.23e-92]",
+            "decimal_outer_ball": {
+              "mid_integer": "30117649121363268639414703022260500590122220182592322926486211",
+              "radius_integer": "2",
+              "exponent": -113,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          }
+        }
+      },
+      "claim": "Exactly one zero of (I1,I2,I3), equivalently of the first three time derivatives, lies in this box; I4 and the two-control unfolding determinant are nonzero throughout the box."
+    },
+    {
+      "label": "start_beyond_gate",
+      "status": "VERIFIED",
+      "branch": "X_gt_1",
+      "coordinate_order": [
+        "log_B",
+        "log_T",
+        "X"
+      ],
+      "box_radius_each_coordinate": "1e-7",
+      "box": {
+        "log_B": {
+          "arb": "[0.08220912574243365992147551392618341456479 +/- 1.01e-7]",
+          "decimal_outer_ball": {
+            "mid_integer": "8220912574243365992147551392618341456478867511514884622611635",
+            "radius_integer": "10000000031935972549806031262710505567730950074747846657",
+            "exponent": -62,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        },
+        "log_T": {
+          "arb": "[-1.573925589208465339762603247364276937516 +/- 1.01e-7]",
+          "decimal_outer_ball": {
+            "mid_integer": "-15739255892084653397626032473642769375155005783488856721003600",
+            "radius_integer": "1000000004049945870604179054906022138442792089304432641",
+            "exponent": -61,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        },
+        "X": {
+          "arb": "[1.424897156781146600000000000000000000000 +/- 1.01e-7]",
+          "decimal_outer_ball": {
+            "mid_integer": "14248971567811466000000000000000000000000000000000000000000119",
+            "radius_integer": "1000000004049945870604179054906022138442792089304432641",
+            "exponent": -61,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        },
+        "B": {
+          "arb": "[1.085682830318745351050324643438216298819 +/- 1.09e-7]",
+          "decimal_outer_ball": {
+            "mid_integer": "10856828303187453510503246434382162988185882568359375000000000",
+            "radius_integer": "1085702591369817746675952190858814164068968520837234688",
+            "exponent": -61,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        },
+        "T": {
+          "arb": "[0.2072300833529533425902968701848294585943 +/- 2.08e-8]",
+          "decimal_outer_ball": {
+            "mid_integer": "20723008335295334259029687018482945859432220458984375000000000",
+            "radius_integer": "2072338544522139049462323412390464321408299125534883840",
+            "exponent": -62,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        }
+      },
+      "center_function": {
+        "I1": {
+          "arb": "[8.543429832570824553271707754623784394177e-16 +/- 3.99e-14]",
+          "decimal_outer_ball": {
+            "mid_integer": "854342983257082455327170775462378439417699434931138540708381",
+            "radius_integer": "39815978562635668790201908977567031028290258412221407585894401",
+            "exponent": -75,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": true
+        },
+        "I2": {
+          "arb": "[1.336247644096995768709513294929560919795e-15 +/- 1.33e-20]",
+          "decimal_outer_ball": {
+            "mid_integer": "13362476440969957687095132949295609197951131967304335401131214",
+            "radius_integer": "132719928277099932398002634090955253761748207143128924161",
+            "exponent": -76,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        },
+        "I3": {
+          "arb": "[-5.142087962204803371683367074032953167249e-15 +/- 4.98e-27]",
+          "decimal_outer_ball": {
+            "mid_integer": "-51420879622048033716833670740329531672488549532190927708842844",
+            "radius_integer": "49774993496370820190423858590334383537693663428609",
+            "exponent": -76,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        }
+      },
+      "krawczyk_image": {
+        "log_B": {
+          "arb": "[0.08220912574243291126309357241789590695084 +/- 8.98e-12]",
+          "decimal_outer_ball": {
+            "mid_integer": "8220912574243291126309357241789590695083853487568170035102003",
+            "radius_integer": "897532887568851282493212397421026726219827344572417",
+            "exponent": -62,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        },
+        "log_T": {
+          "arb": "[-1.573925589208465352522800564448138849735 +/- 8.59e-12]",
+          "decimal_outer_ball": {
+            "mid_integer": "-15739255892084653525228005644481388497349340881674858863032483",
+            "radius_integer": "85885752350385366573460399960568459965183358402561",
+            "exponent": -61,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        },
+        "X": {
+          "arb": "[1.424897156781146643548613277845587779145 +/- 1.39e-12]",
+          "decimal_outer_ball": {
+            "mid_integer": "14248971567811466435486132778455877791450728819810933600820254",
+            "radius_integer": "13858656328381501811505954740140883885983908495361",
+            "exponent": -61,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        },
+        "strictly_inside_box": [
+          true,
+          true,
+          true
+        ],
+        "contraction_row_sum_bounds": [
+          {
+            "arb": "[8.934759938898598000872832054514854904781e-5 +/- 8.19e-46]",
+            "decimal_outer_ball": {
+              "mid_integer": "8934759938898598000872832054514854904780918332107830792665481",
+              "radius_integer": "1",
+              "exponent": -65,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          {
+            "arb": "[8.581728850947426757530441180483148089220e-5 +/- 2.76e-45]",
+            "decimal_outer_ball": {
+              "mid_integer": "8581728850947426757530441180483148089219724852227955125272274",
+              "radius_integer": "1",
+              "exponent": -65,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          {
+            "arb": "[1.385398532682573719163956838761584972747e-5 +/- 2.24e-45]",
+            "decimal_outer_ball": {
+              "mid_integer": "13853985326825737191639568387615849727467765006849731435067951",
+              "radius_integer": "1",
+              "exponent": -66,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          }
+        ],
+        "preconditioner_determinant": {
+          "arb": "[7.956540235536707033365822772362299967460e-5 +/- 4.59e-45]",
+          "decimal_outer_ball": {
+            "mid_integer": "7956540235536707033365822772362299967460458364324207731534253",
+            "radius_integer": "2007",
+            "exponent": -65,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        }
+      },
+      "box_enclosures": {
+        "density_I0": {
+          "arb": "[0.4921825581695884466171264648437500000000 +/- 1.31e-6]",
+          "decimal_outer_ball": {
+            "mid_integer": "49218255816958844661712646484375000000000000000000000000000000",
+            "radius_integer": "130735181833136570947015178544496532080284209658023903232",
+            "exponent": -62,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        },
+        "fourth_time_derivative_I4": {
+          "arb": "[-1615.313106536865234375000000000000000000 +/- 0.0204]",
+          "decimal_outer_ball": {
+            "mid_integer": "-16153131065368652343750000000000000000000000000000000000000000",
+            "radius_integer": "203056336205363767273257838954414722647591789300077821952",
+            "exponent": -58,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        },
+        "control_unfolding_determinant": {
+          "arb": "[-37.54621980051275032322366520531886635581 +/- 5.67e-4]",
+          "decimal_outer_ball": {
+            "mid_integer": "-37546219800512750323223665205318866355810314416885375976562500",
+            "radius_integer": "566153451192324788197547303000018171839087087254960603136",
+            "exponent": -60,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        },
+        "full_cusp_jacobian_determinant": {
+          "arb": "[12568.27679556517457963374905460230033878 +/- 0.590]",
+          "decimal_outer_ball": {
+            "mid_integer": "12568276795565174579633749054602300338782110684014312540149978",
+            "radius_integer": "589976948739712181399955731047149237383168017374350671873",
+            "exponent": -57,
+            "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+          },
+          "contains_zero": false
+        }
+      },
+      "sign_checks": {
+        "density_positive": true,
+        "fourth_derivative_negative": true,
+        "unfolding_determinant_expected_sign": true,
+        "full_cusp_jacobian_invertible": true,
+        "preconditioner_invertible": true,
+        "weighted_infinity_contraction": true
+      },
+      "tail_bounds_at_box": {
+        "0": {
+          "small_I": {
+            "arb": "[1.592639131165137871545760421783901548830e-7 +/- 6.68e-48]",
+            "decimal_outer_ball": {
+              "mid_integer": "15926391311651378715457604217839015488299332296846952300549429",
+              "radius_integer": "2",
+              "exponent": -68,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "small_logB": {
+            "arb": "[2.290707820749521792572135877612975398113e-11 +/- 3.47e-51]",
+            "decimal_outer_ball": {
+              "mid_integer": "22907078207495217925721358776129753981126533624814256005592431",
+              "radius_integer": "2",
+              "exponent": -72,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "small_X": {
+            "arb": "[1.787499784735644809741083794988714737121e-10 +/- 8.76e-51]",
+            "decimal_outer_ball": {
+              "mid_integer": "17874997847356448097410837949887147371209124916902047095165847",
+              "radius_integer": "2",
+              "exponent": -71,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_I": {
+            "arb": "[5.196360279318133988216524408274855865071e-221 +/- 3.09e-261]",
+            "decimal_outer_ball": {
+              "mid_integer": "51963602793181339882165244082748558650713080446079171386073612",
+              "radius_integer": "2",
+              "exponent": -282,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_logB": {
+            "arb": "[3.128970172560207030741402910975840511278e-222 +/- 3.77e-262]",
+            "decimal_outer_ball": {
+              "mid_integer": "31289701725602070307414029109758405112783763995533280321448300",
+              "radius_integer": "2",
+              "exponent": -283,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_X": {
+            "arb": "[3.641030866801031748801119221754105869840e-219 +/- 4.33e-259]",
+            "decimal_outer_ball": {
+              "mid_integer": "36410308668010317488011192217541058698404321566599680608968707",
+              "radius_integer": "2",
+              "exponent": -280,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          }
+        },
+        "1": {
+          "small_I": {
+            "arb": "[3.981597827912844678864401054459753872075e-14 +/- 1.67e-54]",
+            "decimal_outer_ball": {
+              "mid_integer": "39815978279128446788644010544597538720748330742117380751382145",
+              "radius_integer": "2",
+              "exponent": -75,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "small_logB": {
+            "arb": "[6.872123462248565377716407632838926194338e-18 +/- 4.00e-59]",
+            "decimal_outer_ball": {
+              "mid_integer": "68721234622485653777164076328389261943379600874442768016797485",
+              "radius_integer": "2",
+              "exponent": -79,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "small_X": {
+            "arb": "[5.362499354206934429223251384966144211363e-17 +/- 2.63e-57]",
+            "decimal_outer_ball": {
+              "mid_integer": "53624993542069344292232513849661442113627374750706141285499393",
+              "radius_integer": "2",
+              "exponent": -78,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_I": {
+            "arb": "[1.275615800503039643730096531970348857050e-217 +/- 3.36e-257]",
+            "decimal_outer_ball": {
+              "mid_integer": "12756158005030396437300965319703488570496646539964035892577941",
+              "radius_integer": "2",
+              "exponent": -278,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_logB": {
+            "arb": "[7.681075939454046173710955295202616184038e-219 +/- 3.04e-259]",
+            "decimal_outer_ball": {
+              "mid_integer": "7681075939454046173710955295202616184038303660504976251577220",
+              "radius_integer": "2",
+              "exponent": -279,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_X": {
+            "arb": "[8.938112869377556744402836116436171885931e-216 +/- 2.39e-257]",
+            "decimal_outer_ball": {
+              "mid_integer": "8938112869377556744402836116436171885931023795547220497203852",
+              "radius_integer": "2",
+              "exponent": -276,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          }
+        },
+        "2": {
+          "small_I": {
+            "arb": "[1.327199275970948226288133684819917957358e-20 +/- 2.78e-60]",
+            "decimal_outer_ball": {
+              "mid_integer": "13271992759709482262881336848199179573582776914039126917133940",
+              "radius_integer": "2",
+              "exponent": -81,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "small_logB": {
+            "arb": "[2.454329807945916206327288440299616497978e-24 +/- 1.58e-64]",
+            "decimal_outer_ball": {
+              "mid_integer": "24543298079459162063272884402996164979778428883729560006016495",
+              "radius_integer": "2",
+              "exponent": -85,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "small_X": {
+            "arb": "[1.915178340788190867579732637487908646915e-23 +/- 2.64e-63]",
+            "decimal_outer_ball": {
+              "mid_integer": "19151783407881908675797326374879086469152633839537907601978827",
+              "radius_integer": "2",
+              "exponent": -84,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_I": {
+            "arb": "[3.131426365270451417014749652010259009580e-214 +/- 4.41e-254]",
+            "decimal_outer_ball": {
+              "mid_integer": "31314263652704514170147496520102590095804403327949180365620152",
+              "radius_integer": "2",
+              "exponent": -275,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_logB": {
+            "arb": "[1.885577436479361556009907832796206746939e-215 +/- 2.17e-255]",
+            "decimal_outer_ball": {
+              "mid_integer": "18855774364793615560099078327962067469392169789498544078484012",
+              "radius_integer": "2",
+              "exponent": -276,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_X": {
+            "arb": "[2.194163518474835399872282783440072027407e-212 +/- 4.72e-252]",
+            "decimal_outer_ball": {
+              "mid_integer": "21941635184748353998722827834400720274074714440919993336988334",
+              "radius_integer": "2",
+              "exponent": -273,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          }
+        },
+        "3": {
+          "small_I": {
+            "arb": "[4.976997284891055848580501318074692340094e-27 +/- 4.59e-67]",
+            "decimal_outer_ball": {
+              "mid_integer": "49769972848910558485805013180746923400935413427646725939254348",
+              "radius_integer": "2",
+              "exponent": -88,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "small_logB": {
+            "arb": "[9.544615919789674135717232823387397492136e-31 +/- 5.58e-72]",
+            "decimal_outer_ball": {
+              "mid_integer": "9544615919789674135717232823387397492136055677005940002339414",
+              "radius_integer": "2",
+              "exponent": -91,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "small_X": {
+            "arb": "[7.447915769731853373921182479119644738004e-30 +/- 1.99e-70]",
+            "decimal_outer_ball": {
+              "mid_integer": "7447915769731853373921182479119644738003802048709186289660010",
+              "radius_integer": "2",
+              "exponent": -90,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_I": {
+            "arb": "[7.687164988790091115248826721858179913065e-211 +/- 2.36e-251]",
+            "decimal_outer_ball": {
+              "mid_integer": "7687164988790091115248826721858179913065235646489386747847332",
+              "radius_integer": "2",
+              "exponent": -271,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_logB": {
+            "arb": "[4.628799519002853745416764276160970543277e-212 +/- 2.81e-252]",
+            "decimal_outer_ball": {
+              "mid_integer": "46287995190028537454167642761609705432772804567661753862144694",
+              "radius_integer": "2",
+              "exponent": -273,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_X": {
+            "arb": "[5.386340863064940906132086299505668020309e-209 +/- 2.92e-249]",
+            "decimal_outer_ball": {
+              "mid_integer": "53863408630649409061320862995056680203092913809412297282898305",
+              "radius_integer": "2",
+              "exponent": -270,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          }
+        },
+        "4": {
+          "small_I": {
+            "arb": "[1.990798913956422339432200527229876936037e-33 +/- 4.17e-73]",
+            "decimal_outer_ball": {
+              "mid_integer": "19907989139564223394322005272298769360374165371058690375715653",
+              "radius_integer": "2",
+              "exponent": -94,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "small_logB": {
+            "arb": "[3.904615603550321237338867973203935337692e-37 +/- 2.28e-78]",
+            "decimal_outer_ball": {
+              "mid_integer": "39046156035503212373388679732039353376920227769569754555064889",
+              "radius_integer": "2",
+              "exponent": -98,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "small_X": {
+            "arb": "[3.046874633072121834785938286912581938274e-36 +/- 2.83e-76]",
+            "decimal_outer_ball": {
+              "mid_integer": "30468746330721218347859382869125819382742826562901216639550920",
+              "radius_integer": "2",
+              "exponent": -97,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_I": {
+            "arb": "[1.887086867427260764658142867605226000475e-207 +/- 3.55e-248]",
+            "decimal_outer_ball": {
+              "mid_integer": "18870868674272607646581428676052260004750354795385799497820508",
+              "radius_integer": "2",
+              "exponent": -268,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_logB": {
+            "arb": "[1.136302758819637285305527087312370362167e-208 +/- 2.71e-248]",
+            "decimal_outer_ball": {
+              "mid_integer": "11363027588196372853055270873123703621672708486315574675492287",
+              "radius_integer": "2",
+              "exponent": -269,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          },
+          "large_X": {
+            "arb": "[1.322270690466372864082665338210073641857e-205 +/- 3.31e-245]",
+            "decimal_outer_ball": {
+              "mid_integer": "13222706904663728640826653382100736418566697728527618786553311",
+              "radius_integer": "2",
+              "exponent": -266,
+              "meaning": "(mid_integer +/- radius_integer) * 10^exponent"
+            },
+            "contains_zero": false
+          }
+        }
+      },
+      "claim": "Exactly one zero of (I1,I2,I3), equivalently of the first three time derivatives, lies in this box; I4 and the two-control unfolding determinant are nonzero throughout the box."
+    }
+  ],
+  "scope": "local existence and uniqueness in the two displayed boxes only; no global assertion that these are the only half-line cusps"
+}

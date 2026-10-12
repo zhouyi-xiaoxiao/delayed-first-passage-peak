@@ -1,0 +1,549 @@
+{
+  "settings": {
+    "numerical_dependencies": [
+      "numpy"
+    ],
+    "k_deep": 160.0,
+    "k_convergence_check": 120.0,
+    "root_grid_step_general_theta": 0.002,
+    "newton_tolerance": 2e-10,
+    "small_b_newton_tolerance": 5e-08,
+    "scope": "continuum rank-one delta sink; folds listed in CSV; critical-count scans use the printed tau interval"
+  },
+  "cusp_left": {
+    "theta": 0.5,
+    "xi": 0.3788069560695033,
+    "b": 5.816302186418567,
+    "tau": 0.016079567180289172,
+    "residual": 3.9024643385533457e-13,
+    "kmax": 160.0
+  },
+  "cusp_right": {
+    "theta": 0.5,
+    "xi": 0.6211930439304967,
+    "b": 5.816302186418566,
+    "tau": 0.016079567180289186,
+    "residual": 3.8516630276372755e-13,
+    "kmax": 160.0
+  },
+  "cusp_nondegeneracy": {
+    "tau4_S4_over_Phi": -5.072538623761485,
+    "unfolding_jacobian_logb_xi": [
+      [
+        0.3936336064333309,
+        13.00429478816561
+      ],
+      [
+        0.17382847720718067,
+        24.98173404350558
+      ]
+    ],
+    "unfolding_determinant": 7.573133306323314,
+    "unfolding_singular_values": [
+      28.16578753836282,
+      0.2688770301916264
+    ]
+  },
+  "lower_sheet_asymptotics": [
+    {
+      "delta": 0.08,
+      "xi": 0.42,
+      "b_direct": 0.07724074968037904,
+      "b_asymptotic": 0.10737374719863327,
+      "b_direct_over_asymptotic": 0.7193634542481742,
+      "tau_direct": 0.006996074674536589,
+      "tau_asymptotic": 0.006881882352941176,
+      "tau_direct_over_asymptotic": 1.016593181304038
+    },
+    {
+      "delta": 0.07,
+      "xi": 0.43,
+      "b_direct": 0.0014144827209492685,
+      "b_asymptotic": 0.0016976661497792127,
+      "b_direct_over_asymptotic": 0.8331925102784353,
+      "tau_direct": 0.005223163181404762,
+      "tau_asymptotic": 0.005166777777777779,
+      "tau_direct_over_asymptotic": 1.0109130692381423
+    },
+    {
+      "delta": 0.06,
+      "xi": 0.44,
+      "b_direct": 1.4187415105710693e-06,
+      "b_asymptotic": 1.6023892927878434e-06,
+      "b_direct_over_asymptotic": 0.885391282228763,
+      "tau_direct": 0.003754915712969812,
+      "tau_asymptotic": 0.0037364210526315785,
+      "tau_direct_over_asymptotic": 1.004949833029446
+    }
+  ],
+  "folds": [
+    {
+      "theta": 0.3,
+      "xi": 0.24,
+      "branch": "lower",
+      "b": 3.064656926186961,
+      "tau": 0.003729189068120893,
+      "residual": 7.774725811265579e-11,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.3,
+      "xi": 0.24,
+      "branch": "upper",
+      "b": 6.030041104001651,
+      "tau": 0.008405350340191029,
+      "residual": 1.737560566183445e-13,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.3,
+      "xi": 0.42,
+      "branch": "lower",
+      "b": 3.225978958327006,
+      "tau": 0.014619850825975316,
+      "residual": 1.9239901695551573e-13,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.3,
+      "xi": 0.42,
+      "branch": "upper",
+      "b": 3.708381520395405,
+      "tau": 0.025822421155000736,
+      "residual": 1.2715002478864824e-13,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.38,
+      "xi": 0.3,
+      "branch": "lower",
+      "b": 3.5156524369356794,
+      "tau": 0.00644920222355979,
+      "residual": 5.673999644406153e-14,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.38,
+      "xi": 0.3,
+      "branch": "upper",
+      "b": 5.228630703014088,
+      "tau": 0.012803874166824375,
+      "residual": 3.708354232763466e-13,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.38,
+      "xi": 0.5,
+      "branch": "lower",
+      "b": 1.6582250600874078,
+      "tau": 0.014382379764437734,
+      "residual": 3.417904778962231e-13,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.38,
+      "xi": 0.5,
+      "branch": "upper",
+      "b": 4.618831736445882,
+      "tau": 0.03603902174449346,
+      "residual": 1.62830184736129e-13,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.5,
+      "xi": 0.38,
+      "branch": "lower",
+      "b": 5.5704159354566105,
+      "tau": 0.014634992801842942,
+      "residual": 6.154126607465519e-13,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.5,
+      "xi": 0.38,
+      "branch": "upper",
+      "b": 5.612210467073266,
+      "tau": 0.017719800564658432,
+      "residual": 7.411935890640958e-12,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.5,
+      "xi": 0.382,
+      "branch": "lower",
+      "b": 5.145291878040877,
+      "tau": 0.013784252627450708,
+      "residual": 7.089038329622591e-11,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.5,
+      "xi": 0.382,
+      "branch": "upper",
+      "b": 5.319833730405658,
+      "tau": 0.018902955536292617,
+      "residual": 4.016379416282028e-11,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.5,
+      "xi": 0.385,
+      "branch": "lower",
+      "b": 4.514769627054667,
+      "tau": 0.012955013438183045,
+      "residual": 7.145324328496653e-15,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.5,
+      "xi": 0.385,
+      "branch": "upper",
+      "b": 4.954947551592258,
+      "tau": 0.02024126313698209,
+      "residual": 2.8809886756590873e-13,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.5,
+      "xi": 0.39,
+      "branch": "lower",
+      "b": 3.523322556628969,
+      "tau": 0.0119487835876125,
+      "residual": 2.0358168914774112e-15,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.5,
+      "xi": 0.39,
+      "branch": "upper",
+      "b": 4.481878061333422,
+      "tau": 0.022119931166474243,
+      "residual": 3.037524099567071e-13,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.5,
+      "xi": 0.4,
+      "branch": "lower",
+      "b": 1.8390558587442787,
+      "tau": 0.01035756887484519,
+      "residual": 5.3271190209082317e-14,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.5,
+      "xi": 0.4,
+      "branch": "upper",
+      "b": 3.862078623165593,
+      "tau": 0.025454577939225356,
+      "residual": 4.526890662126619e-14,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.5,
+      "xi": 0.41000000000000003,
+      "branch": "lower",
+      "b": 0.6345248145065157,
+      "tau": 0.008795583164621864,
+      "residual": 6.024879812825834e-14,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.5,
+      "xi": 0.41,
+      "branch": "upper",
+      "b": 3.50925148567026,
+      "tau": 0.028431757022751334,
+      "residual": 5.522335981100732e-15,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.5,
+      "xi": 0.42000000000000004,
+      "branch": "lower",
+      "b": 0.07724074968037904,
+      "tau": 0.006996074674536589,
+      "residual": 2.5113544324540278e-12,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.5,
+      "xi": 0.42,
+      "branch": "upper",
+      "b": 3.3098654253658313,
+      "tau": 0.030950098973453674,
+      "residual": 1.7356707938990936e-15,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.5,
+      "xi": 0.43000000000000005,
+      "branch": "lower",
+      "b": 0.0014144827209492685,
+      "tau": 0.005223163181404762,
+      "residual": 4.0725076782699536e-11,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.5,
+      "xi": 0.43,
+      "branch": "upper",
+      "b": 3.198219199546087,
+      "tau": 0.032978036005568125,
+      "residual": 5.76315050703172e-15,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.5,
+      "xi": 0.44,
+      "branch": "lower",
+      "b": 1.4187415105710693e-06,
+      "tau": 0.003754915712969812,
+      "residual": 7.852955174678069e-09,
+      "kmax": 160.0
+    },
+    {
+      "theta": 0.5,
+      "xi": 0.44,
+      "branch": "upper",
+      "b": 3.13660367796671,
+      "tau": 0.034574874380521266,
+      "residual": 3.235460485849695e-15,
+      "kmax": 160.0
+    }
+  ],
+  "critical_count_checks": [
+    {
+      "theta": 0.5,
+      "xi": 0.4,
+      "b": 1.0,
+      "tau_interval": [
+        0.002,
+        0.8
+      ],
+      "moment_roots": [
+        0.05629274126565412
+      ],
+      "moment_kinds": [
+        "max"
+      ],
+      "n_max_moments": 1,
+      "n_min_moments": 0,
+      "n_max_sampled": 1,
+      "n_min_sampled": 0,
+      "minimum_density_over_maximum": 0.00775459903732058
+    },
+    {
+      "theta": 0.5,
+      "xi": 0.4,
+      "b": 2.5,
+      "tau_interval": [
+        0.002,
+        0.8
+      ],
+      "moment_roots": [
+        0.008674510108212713,
+        0.0141645818348063,
+        0.0414793110325178
+      ],
+      "moment_kinds": [
+        "max",
+        "min",
+        "max"
+      ],
+      "n_max_moments": 2,
+      "n_min_moments": 1,
+      "n_max_sampled": 2,
+      "n_min_sampled": 1,
+      "minimum_density_over_maximum": 0.001465643971012041
+    },
+    {
+      "theta": 0.5,
+      "xi": 0.4,
+      "b": 4.5,
+      "tau_interval": [
+        0.002,
+        0.8
+      ],
+      "moment_roots": [
+        0.007600072852750892
+      ],
+      "moment_kinds": [
+        "max"
+      ],
+      "n_max_moments": 1,
+      "n_min_moments": 0,
+      "n_max_sampled": 1,
+      "n_min_sampled": 0,
+      "minimum_density_over_maximum": 0.0002333460083097226
+    },
+    {
+      "theta": 0.38,
+      "xi": 0.3,
+      "b": 2.0,
+      "tau_interval": [
+        0.002,
+        0.8
+      ],
+      "moment_roots": [
+        0.023476910573251124
+      ],
+      "moment_kinds": [
+        "max"
+      ],
+      "n_max_moments": 1,
+      "n_min_moments": 0,
+      "n_max_sampled": 1,
+      "n_min_sampled": 0,
+      "minimum_density_over_maximum": 0.0017329033390925152
+    },
+    {
+      "theta": 0.38,
+      "xi": 0.3,
+      "b": 4.2,
+      "tau_interval": [
+        0.002,
+        0.8
+      ],
+      "moment_roots": [
+        0.005458301769703273,
+        0.008503473543850124,
+        0.017661749235160763
+      ],
+      "moment_kinds": [
+        "max",
+        "min",
+        "max"
+      ],
+      "n_max_moments": 2,
+      "n_min_moments": 1,
+      "n_max_sampled": 2,
+      "n_min_sampled": 1,
+      "minimum_density_over_maximum": 0.00033480073351717545
+    },
+    {
+      "theta": 0.38,
+      "xi": 0.3,
+      "b": 6.0,
+      "tau_interval": [
+        0.002,
+        0.8
+      ],
+      "moment_roots": [
+        0.004881794367651207
+      ],
+      "moment_kinds": [
+        "max"
+      ],
+      "n_max_moments": 1,
+      "n_min_moments": 0,
+      "n_max_sampled": 1,
+      "n_min_sampled": 0,
+      "minimum_density_over_maximum": 0.0001211273866984289
+    },
+    {
+      "theta": 0.3,
+      "xi": 0.24,
+      "b": 2.0,
+      "tau_interval": [
+        0.002,
+        0.8
+      ],
+      "moment_roots": [
+        0.01555499429868486
+      ],
+      "moment_kinds": [
+        "max"
+      ],
+      "n_max_moments": 1,
+      "n_min_moments": 0,
+      "n_max_sampled": 1,
+      "n_min_sampled": 0,
+      "minimum_density_over_maximum": 0.0014806494926157601
+    },
+    {
+      "theta": 0.3,
+      "xi": 0.24,
+      "b": 4.5,
+      "tau_interval": [
+        0.002,
+        0.8
+      ],
+      "moment_roots": [
+        0.003061647930080283,
+        0.0054435964894904276,
+        0.011962046098902161
+      ],
+      "moment_kinds": [
+        "max",
+        "min",
+        "max"
+      ],
+      "n_max_moments": 2,
+      "n_min_moments": 1,
+      "n_max_sampled": 2,
+      "n_min_sampled": 1,
+      "minimum_density_over_maximum": 0.0003651577712035197
+    },
+    {
+      "theta": 0.3,
+      "xi": 0.24,
+      "b": 7.0,
+      "tau_interval": [
+        0.002,
+        0.8
+      ],
+      "moment_roots": [
+        0.0027763754028382152
+      ],
+      "moment_kinds": [
+        "max"
+      ],
+      "n_max_moments": 1,
+      "n_min_moments": 0,
+      "n_max_sampled": 1,
+      "n_min_sampled": 0,
+      "minimum_density_over_maximum": 0.0001315935587117416
+    },
+    {
+      "theta": 0.5,
+      "xi": 0.37,
+      "b": 5.8,
+      "tau_interval": [
+        0.002,
+        0.8
+      ],
+      "moment_roots": [
+        0.02475371976387126
+      ],
+      "moment_kinds": [
+        "max"
+      ],
+      "n_max_moments": 1,
+      "n_min_moments": 0,
+      "n_max_sampled": 1,
+      "n_min_sampled": 0,
+      "minimum_density_over_maximum": 0.00011939554448239556
+    }
+  ],
+  "kmax_convergence": [
+    {
+      "theta": 0.3,
+      "xi": 0.24,
+      "branch": "lower",
+      "delta_b": 6.99554814076464e-09,
+      "delta_tau": 1.8680038852553205e-11,
+      "k_shallow": 120.0,
+      "k_deep": 160.0
+    },
+    {
+      "theta": 0.5,
+      "xi": 0.44,
+      "branch": "upper",
+      "delta_b": 0.0,
+      "delta_tau": 6.245004513516506e-17,
+      "k_shallow": 120.0,
+      "k_deep": 160.0
+    }
+  ]
+}

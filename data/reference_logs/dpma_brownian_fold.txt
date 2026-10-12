@@ -1,0 +1,13 @@
+point-sink b_+(theta=0.5; xi=0.44) = 3.1366; gate width ell=0.02
+
+Brownian dynamics at b=2.5 (seed 7):
+  absorbed 59998 trajectories; median tau=0.0924
+  probability inside displayed bins=0.990367
+  histogram counts identical to the stored run: True
+
+Brownian dynamics at b=3.8 (seed 8):
+  absorbed 60000 trajectories; median tau=0.0736
+  probability inside displayed bins=0.992333
+  histogram counts identical to the stored run: True
+
+wrote outputs/data/dpma_brownian_fold_data.npz and .json

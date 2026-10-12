@@ -1,0 +1,19 @@
+{
+  "D": 0.5,
+  "b": [
+    2.5,
+    3.8
+  ],
+  "b_c_delta_sink": 3.136602575910443,
+  "description": "Processed Brownian histogram counts/densities and exact plotted curves; no raw trajectories.",
+  "dt": 1.5e-05,
+  "ell": 0.02,
+  "nwalk_per_condition": 60000,
+  "seeds": [
+    7,
+    8
+  ],
+  "simulation_tau_max": 1.4,
+  "theta": 0.5,
+  "xi": 0.44
+}
