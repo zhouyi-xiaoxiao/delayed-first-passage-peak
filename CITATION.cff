@@ -7,10 +7,10 @@ authors:
     given-names: Xiaoxiao
     affiliation: University of Bristol
     email: xiaoxiao.zhouyi@bristol.ac.uk
-version: 1.0.0
+version: 1.0.1
 date-released: 2026-10-12
 repository-code: "https://github.com/zhouyi-xiaoxiao/delayed-first-passage-peak"
-url: "https://github.com/zhouyi-xiaoxiao/delayed-first-passage-peak/releases/tag/v1.0.0"
+url: "https://github.com/zhouyi-xiaoxiao/delayed-first-passage-peak/releases/tag/v1.0.1"
 license:
   - MIT
   - CC-BY-4.0

@@ -107,7 +107,7 @@ Quoted numbers (logs and tables in `outputs/tables/`):
 | Sec. III C | curvature `b_c(1/2+ε) ≃ 3.076 − 133 ε²` | `dpma_normal_form.py` (part v) |
 | Sec. III C, App. D | single interval in `b` (dense scans, seven `θ`) | `dpma_window_scan.py` |
 | Sec. III C, App. D | lattice threshold `b_{c,N} − b_c ≃ 47/N²`, slope −2.001; `N²(b_{c,N} − b_c)` = 47.247 at `N = 1200`, extrapolated limit 47.25 | `dpma_bcN_convergence.py` |
-| Sec. III C, Table II | nondegeneracy margins: minima 1.82996 and 0.49574; cutoff sensitivity ≤ 4×10⁻⁶ | `dpma_fold_branch_margins.py` |
+| Sec. III C, Table II, App. D | nondegeneracy margins: minima 1.82996 and 0.49574; cutoff sensitivity ≤ 4×10⁻⁶ | `dpma_fold_branch_margins.py` |
 | Sec. III D, Eq. (Bstar), App. C | `B* = 0.78903`, `c_* = 0.15792`; margins −2.69248, −0.50033; Jacobian −1.69×10³ | `dpma_halfline_bstar.py` |
 | Sec. III D, App. C | `b_c θ = 0.789026` for `θ ∈ [0.20, 0.27]` (bisection) | `dpma_endpoint_law.py` |
 | Sec. III D, App. D | `|b_c d − B*| ≤ 2×10⁻⁵` for `d ≤ 0.30`; direct folds for `d = 0.05–0.175`; half-line Brownian dynamics χ²/dof | `fig3_near_end.py` |
@@ -127,7 +127,7 @@ Quoted numbers (logs and tables in `outputs/tables/`):
 | Sec. V, App. D | finite gate `b_+^(ℓ)` = 3.02335, 3.07553, 3.10494; extrapolation 3.13657 | `dpma_finite_gate_check.py`, `measurement_window_ratio.py` (exact gate, no mesh) |
 | Sec. V, App. D | gate width and time step: late peak within two bins (largest offset 1.48 bins) | `dpma_bd_convergence.py` (`--full`; log in `data/reference_logs/`) |
 | Sec. VI, App. D | window ratio: `τ_v`, `τ_p`, `R_c`, `f_p`, `f_v`, `dR/db`, `N_t = 51 086, 319 287`, other window designs | `measurement_window_ratio.py` |
-| Sec. VI, App. D | `R = 1` at `b = 2.821`; trials for `R > 1`; mean-based calibration; `κ`; colloid example | `measurement_shape_test.py` |
+| Sec. VI, App. D | `R = 1` at `b = 2.821`; trials for `R > 1`, probability 0.64 of finding `R > 1` at the one-sided 5% level, factor 2.7 for probability 0.95; mean-based calibration; `κ`; gate of the example, `ℓ/L = 0.05` (exact gate, no mesh): `b_+^(ℓ)` = 3.0005, `R = 1` at `b = 2.714`, at `b = 2` `R = 1.098`, 1.6×10⁴ trials and mean 0.1346; colloid example with this finite-gate model (`κ ≃ 2.1 s⁻¹`, about 17 h) | `measurement_shape_test.py` |
 | Table II, rows 1–3 | jump condition, closed forms of `I` and `J`, normalization identity | `dpma_verification_table.py`, `test_dpma_identities.py` |
 | App. A–C, App. D (formal verification) | exact algebraic identities, the cusp Jacobian factorization, and the decimal bounds of the cusp certificates | `formal/` (Lean 4; modules 8 and 9 need no mathlib and are checked by `--full` when `lean` is installed) |
 
@@ -158,6 +158,6 @@ Creative Commons Attribution 4.0 International License (`LICENSE-DATA`).
 
 Please cite the article and this archive: Xiaoxiao Zhouyi, *Reproduction package for
 "Geometry-controlled disappearance of a delayed first-passage peak under localized absorption"*,
-version v1.0.0, https://github.com/zhouyi-xiaoxiao/delayed-first-passage-peak (see
+version v1.0.1, https://github.com/zhouyi-xiaoxiao/delayed-first-passage-peak (see
 `CITATION.cff`). Verify the files from the archive root with `shasum -a 256 -c SHA256SUMS` (macOS)
 or `sha256sum -c SHA256SUMS` (Linux).

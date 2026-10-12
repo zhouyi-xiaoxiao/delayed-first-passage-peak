@@ -79,7 +79,7 @@ STEPS = [
     ("certificate_rational_checks", ["code/certificate_rational_checks.py"], "exact checks of the cusp certificates"),
     ("dpma_finite_gate_check", ["code/dpma_finite_gate_check.py"], "finite gate b_+^(ell)"),
     ("measurement_window_ratio", ["code/measurement_window_ratio.py"], "Sec. VI window ratio, trials"),
-    ("measurement_shape_test", ["code/measurement_shape_test.py"], "Sec. VI shape test, calibration"),
+    ("measurement_shape_test", ["code/measurement_shape_test.py"], "Sec. VI shape test, calibration, gate of the example"),
     ("dpma_channel_mc", ["code/dpma_channel_mc.py"], "lattice data of Fig. 5 (exact part)"),
     ("dpma_brownian_fold", ["code/dpma_brownian_fold.py"], "data of Fig. 6 (exact part)"),
     ("supplementary_checks", ["code/supplementary_checks.py"], "supplementary physical checks"),
@@ -408,6 +408,8 @@ def check_list():
             jload(TAB / "measurement_window_ratio.json")["R_c"]))
     add("exact finite gate (no mesh): b_+^(0.02)", "3.0755",
         lambda: (lambda v: (f"{v:.5f}", close(v, 3.0755, 5e-5)))(num(TAB / "measurement_window_ratio.txt", r"ell=0\.02\s*: b_\+\^\(ell\)=([\d.]+)")))
+    add("Brownian dynamics of Fig. 6: fixed time step (stored run)", "1.5e-5",
+        lambda: (lambda v: (f"{v:.1e}", close(v, 1.5e-5, 1e-12)))(jload(DATA / "dpma_brownian_fold_data.json")["dt"]))
     add("half-line Brownian dynamics chi^2/dof", "42.0/42, 45.7/42",
         lambda: (lambda v: (", ".join(f"{x:.1f}/42" for x in v), len(v) == 2 and close(v[0], 42.0, 0.05) and close(v[1], 45.7, 0.05)))(
             nums(TAB / "fig3_near_end.txt", r"chi2/dof vs delta-sink density: ([\d.]+)/42")))
@@ -418,8 +420,13 @@ def check_list():
     add("R = 1 at b", "2.821 (2.82)",
         lambda: (lambda v: (f"{v:.4f}", close(v, 2.821, 5e-4)))(num(TAB / "measurement_shape_test.txt", r"R = 1 at b = ([\d.]+)")))
     add("two-s.d. test of R>1: trials at b = 1.5, 2, 2.5", "5.0e3, 1.4e4, 9.7e4",
-        lambda: (lambda v: (", ".join(f"{x:.3g}" for x in v), all(close(a / b, 1.0, 0.02) for a, b in zip(v, (5.0e3, 1.4e4, 9.7e4)))))(
+        lambda: (lambda v: (", ".join(f"{x:.3g}" for x in v), len(v) == 3
+                            and all(close(a / b, 1.0, 0.02) for a, b in zip(v, (5.0e3, 1.4e4, 9.7e4)))))(
             nums(TAB / "measurement_shape_test.txt", r"N_t\(2 s\.d\., R > 1\) = ([\d.e+]+)")))
+    add("two-s.d. test: probability of R>1 at the one-sided 5% level; trials factor for 0.95", "0.64, 2.7",
+        lambda: (lambda a, b: (f"{a:.3f}, {b:.2f}", close(a, 0.64, 5e-3) and close(b, 2.7, 0.05)))(
+            num(TAB / "measurement_shape_test.txt", r"one-sided 5% level = ([\d.]+)"),
+            num(TAB / "measurement_shape_test.txt", r"trials factor for probability 0\.95 = ([\d.]+)")))
     add("at b_+: R_c, f_p, f_v, dR/db", "0.969955, 0.104529, 0.059015, -0.088385",
         lambda: (lambda d: (f"{d['R_c']:.6f}, {d['p']:.6f}, {d['v']:.6f}, {d['dR_db']:.6f}",
                             close(d["R_c"], 0.969955, 5e-7) and close(d["p"], 0.104529, 5e-7) and close(d["v"], 0.059015, 5e-7)
@@ -444,15 +451,27 @@ def check_list():
     add("kappa ell L/D at b_c(0.381) and b_+", "4.3, 6.3",
         lambda: (lambda a, b: (f"{a:.2f}, {b:.2f}", close(a, 4.3, 0.05) and close(b, 6.3, 0.05)))(
             num(TAB / "measurement_shape_test.txt", r"2 b: ([\d.]+) for b_c"), num(TAB / "measurement_shape_test.txt", r"; ([\d.]+) for b_\+")))
-    add("colloid example: L^2/(2D), ell^2/(2D), kappa, p per frame", "28 s, 0.07 s, 2.2/s, 0.01",
+    add("gate of the example (ell = 0.05, exact gate, no mesh): upper fold b_+", "3.0005 (3.00)",
+        lambda: (lambda v: (f"{v:.5f}", close(v, 3.0005, 5e-5)))(
+            num(TAB / "measurement_shape_test.txt", r"upper fold b_\+\^\(ell\) = ([\d.]+)")))
+    add("gate of the example (ell = 0.05): R = 1 at b", "2.714",
+        lambda: (lambda v: (f"{v:.4f}", close(v, 2.714, 5e-4)))(
+            num(TAB / "measurement_shape_test.txt", r"R\^\(ell\) = 1 at b = ([\d.]+)")))
+    add("gate of the example (ell = 0.05), b = 2: R, trials (two-s.d. test), mean", "1.098, 1.6e4, 0.1346",
+        lambda: (lambda r, n, t: (f"{r:.4f}, {n:.3g}, {t:.5f}", close(r, 1.098, 5e-4) and close(n / 1.6e4, 1.0, 0.02)
+                                  and close(t, 0.1346, 5e-5)))(
+            num(TAB / "measurement_shape_test.txt", r"b = 2\.0: R\^\(ell\) = ([\d.]+)"),
+            num(TAB / "measurement_shape_test.txt", r"N_t\^\(ell\)\(2 s\.d\., R > 1\) = ([\d.e+]+)"),
+            num(TAB / "measurement_shape_test.txt", r"mean absorption time at b = 2\.0: ([\d.]+)")))
+    add("colloid example: L^2/(2D), ell^2/(2D), kappa at the finite-gate fold, p per frame", "28 s, 0.07 s, 2.1/s, 0.01",
         lambda: (lambda a, b, c, d: (f"{a:.1f} s, {b:.3f} s, {c:.2f}/s, {d:.4f}", close(a, 28, 0.5) and close(b, 0.07, 0.005)
-                                     and close(c, 2.2, 0.05) and close(d, 0.01, 0.002)))(
+                                     and close(c, 2.1, 0.05) and close(d, 0.01, 0.002)))(
             num(TAB / "measurement_shape_test.txt", r"L\^2/\(2D\) = ([\d.]+) s"),
             num(TAB / "measurement_shape_test.txt", r"ell\^2/\(2D\) = ([\d.]+) s"),
-            num(TAB / "measurement_shape_test.txt", r"kappa at b_\+ = ([\d.]+)"),
+            num(TAB / "measurement_shape_test.txt", r"needs kappa = ([\d.]+) 1/s"),
             num(TAB / "measurement_shape_test.txt", r"1 - exp\(-kappa dt\) = ([\d.]+)")))
-    add("colloid example: mean trial, accumulated time at b=2", "4 s, 15 h",
-        lambda: (lambda a, b: (f"{a:.2f} s, {b:.1f} h", close(a, 4, 0.2) and close(b, 15, 0.5)))(
+    add("colloid example (finite gate): mean trial, accumulated time at b=2", "3.8 s, 17 h",
+        lambda: (lambda a, b: (f"{a:.2f} s, {b:.1f} h", close(a, 3.8, 0.05) and close(b, 17, 0.5)))(
             num(TAB / "measurement_shape_test.txt", r"mean trial duration at b = 2: ([\d.]+) s"),
             num(TAB / "measurement_shape_test.txt", r"take ([\d.]+) h")))
     # --- Table II rows not listed above
