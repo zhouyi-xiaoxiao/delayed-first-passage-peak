@@ -3,6 +3,22 @@
 **Author:** Xiaoxiao Zhouyi, School of Engineering Mathematics and Technology, University of Bristol
 (xiaoxiao.zhouyi@bristol.ac.uk)
 
+**Status:** single-author article, submitted to *Physical Review E* (Jul 2026); not yet published.
+
+**At a glance.** The article asks why the time a random walker takes to first reach a target can
+follow a distribution with two peaks, and when the second peak disappears. A particle released at a
+leaky trap (the sink of the model below) is often captured almost at once; a particle that escapes
+wanders and is absorbed later, at the walls or on a return to the trap, so the distribution of the
+absorption time can show a capture spike followed by a second, delayed peak. The article determines
+the trap strength at which the delayed peak disappears and how this threshold depends on where the
+trap sits. The results are cross-checked by exact lattice
+calculations, Monte Carlo and Brownian-dynamics simulations and interval-arithmetic certificates;
+selected algebraic identities and certificate bounds are also checked in Lean 4.
+`python reproduce_all.py` regenerates the six figures and makes 96 comparisons with the values
+quoted in the article and with the stored data; on the reference platform all 96 pass. A
+plain-language account of this research line is at
+[zhouyixiaoxiao.com/research](https://zhouyixiaoxiao.com/research/).
+
 This archive contains the code, the stored numerical data and the reference figures that
 reproduce all six figures and the numerical values quoted in the article (main text, Table II and
 the appendices). The article itself is not part of this archive.
@@ -12,14 +28,19 @@ absorbing ends and a partially absorbing point sink of strength `b` at position 
 at `ξ`. The density `Φ(τ)` of the absorption time is an exact signed sum of exponentials. For
 release at the sink, the density shows a capture spike, a valley and a delayed peak; the valley
 and the delayed peak merge (a fold) at a threshold `b_c(θ)`, which is lowest (`b_c ≃ 2.165`) for a
-sink at `θ ≃ 0.381` and grows as `B*/d` near an end (`B* = 0.78903`, merger time `c_* d²`,
-`c_* = 0.15792`, from an exactly solvable half-line problem). For release near, but not at, the
-sink the density has two interior peaks between two fold lines that meet at a cusp. The discrete
-realization is a lazy random walk on a ring with a one-way shortcut to an absorbing target. The
-archive reproduces the threshold curve and its near-end law, the normal-form prefactors, the
-two-peak region and its cusps (including the interval-arithmetic certificates of the half-line
-cusps), the exact lattice calculations and their continuum limit, the lattice Monte Carlo and
-Brownian-dynamics checks, the finite-gate calculation, and the numbers of the proposed
+sink at `θ ≃ 0.381` and grows as `B*/d` as the sink approaches an end, where `d = min(θ, 1 − θ)`
+is the distance from the sink to the nearer end (`B* = 0.78903`; the valley and the peak merge at
+time `c_* d²`, `c_* = 0.15792`; both constants come from an exactly solvable half-line problem).
+For release near, but not at, the sink, the density has two interior peaks in a region of the
+(release point, sink strength) plane bounded by two fold lines that meet at a cusp. The discrete
+realization is a lazy random walk on a ring of `N` sites (it moves to a neighbour with probability
+`q = 2/3` per step) with an absorbing target at site 0 and a one-way shortcut from site `u` to the
+target, taken with probability `λ` per step; the walker starts at site `r`. With `θ = u/N`,
+`ξ = r/N`, `τ = qt/N²` and `b = λN/q`, its rescaled density approaches `Φ(τ)`, with an error that
+falls as `N⁻²`. The archive reproduces the threshold curve and its near-end law, the normal-form
+prefactors, the two-peak region and its cusps (including the interval-arithmetic certificates of
+the half-line cusps), the exact lattice calculations and their continuum limit, the lattice Monte
+Carlo and Brownian-dynamics checks, the finite-gate calculation, and the numbers of the proposed
 measurement.
 
 ## Quick start
@@ -62,7 +83,7 @@ modules of `formal/` that need no mathlib.
 Python 3.11 or 3.12. The stored outputs were produced with Python 3.12.13, NumPy 2.0.2, SciPy
 1.17.1, mpmath 1.4.1, Matplotlib 3.9.4 and pytest 9.0.3, with the dependencies of these packages
 pinned in `requirements.txt`, on macOS on Apple silicon (arm64; NumPy with the Accelerate BLAS).
-Every numerical comparison has a tolerance and is platform independent. The comparisons that
+Every numerical comparison has a tolerance and is expected to pass on any platform. The comparisons that
 require identical bytes (regenerated data files and figure PDFs, rerun simulations) are expected to
 hold on this reference platform with the pinned versions; elsewhere, last-digit differences of the
 system math library or of the font subsetting can make them report "differs" while all numerical
@@ -94,6 +115,9 @@ Figures (all written to `outputs/figures/`, PDF and 150-dpi PNG):
 | Fig. 5 lattice checks | `code/fig5_lattice_checks.py` | `data/dpma_channel_mc_data.npz/.json` (from `dpma_channel_mc.py --simulate`) |
 | Fig. 6 Brownian dynamics, finite gate | `code/fig6_brownian_dynamics.py` | `data/dpma_brownian_fold_data.npz/.json` (from `dpma_brownian_fold.py --simulate`) |
 
+<details>
+<summary>Every quoted number → script (32 rows)</summary>
+
 Quoted numbers (logs and tables in `outputs/tables/`):
 
 | Article | Quantity | Script |
@@ -103,23 +127,23 @@ Quoted numbers (logs and tables in `outputs/tables/`):
 | Sec. III A, App. C | at most one interior maximum for release at the sink | `supplementary_checks.py` (part E), `dpma_window_scan.py` |
 | Sec. III A, V | capture share near the delayed peak (about one half at `b = 2.6`; continuum 0.523, lattice 0.521) | `supplementary_checks.py` (part A), `dpma_channel_mc.py` |
 | Sec. III B, App. C | no fold with two exponentials; three-term ratio | `finite_mode_algebra.py`, `formal/` |
-| Sec. III C, Eq. (antip) | `b_c(1/2) = 3.0764`, `τ_c = 0.03836`, minimum 2.165 at `θ ≃ 0.381` | `dpma_saddle_node_bc_theta.py` |
+| Sec. III C | `b_c(1/2) = 3.0764`, `τ_c = 0.03836`, minimum 2.165 at `θ ≃ 0.381` | `dpma_saddle_node_bc_theta.py` |
 | Sec. III C | curvature `b_c(1/2+ε) ≃ 3.076 − 133 ε²` | `dpma_normal_form.py` (part v) |
 | Sec. III C, App. D | single interval in `b` (dense scans, seven `θ`) | `dpma_window_scan.py` |
 | Sec. III C, App. D | lattice threshold `b_{c,N} − b_c ≃ 47/N²`, slope −2.001; `N²(b_{c,N} − b_c)` = 47.247 at `N = 1200`, extrapolated limit 47.25 | `dpma_bcN_convergence.py` |
 | Sec. III C, Table II, App. D | nondegeneracy margins: minima 1.82996 and 0.49574; cutoff sensitivity ≤ 4×10⁻⁶ | `dpma_fold_branch_margins.py` |
-| Sec. III D, Eq. (Bstar), App. C | `B* = 0.78903`, `c_* = 0.15792`; margins −2.69248, −0.50033; Jacobian −1.69×10³ | `dpma_halfline_bstar.py` |
+| Sec. III D, App. C | `B* = 0.78903`, `c_* = 0.15792`; margins −2.69248, −0.50033; Jacobian −1.69×10³ | `dpma_halfline_bstar.py` |
 | Sec. III D, App. C | `b_c θ = 0.789026` for `θ ∈ [0.20, 0.27]` (bisection) | `dpma_endpoint_law.py` |
-| Sec. III D, App. D | `|b_c d − B*| ≤ 2×10⁻⁵` for `d ≤ 0.30`; direct folds for `d = 0.05–0.175`; half-line Brownian dynamics χ²/dof | `fig3_near_end.py` |
+| Sec. III D, App. D | `\|b_c d − B*\| ≤ 2×10⁻⁵` for `d ≤ 0.30`; direct folds for `d = 0.05–0.175`; half-line Brownian dynamics χ²/dof | `fig3_near_end.py` |
 | Sec. III D, App. D | hatched region of Fig. 2(a): pair at `0.98 B*/θ`, none at `1.02 B*/θ` (`θ = 0.10, 0.15`) | `small_theta_check.py` |
 | Sec. III D | odds `2B`; crude estimate `18e⁻³ ≈ 0.90` at `σ = 1/6`; 78% still diffusing, 1% at the wall at the merger | `endpoint_physics_checks.py`, `supplementary_checks.py` (part B) |
 | Sec. III D, F, App. C | mean `≈ 0.39 d` at threshold; `dμ₁/db ≃ 1.10`; lattice mean and `π_sc` vs closed forms | `dpma_mfpt_smoothness.py` |
-| Sec. III E, Eq. (prefac), App. C | `A_τ = 0.0247518`, `A_Φ = 0.357444`; agreement < 2×10⁻⁴; fitted slopes 0.5010, 1.5020 | `dpma_normal_form.py`, `dpma_saddle_node_certification.py` |
+| Sec. III E, App. C | `A_τ = 0.0247518`, `A_Φ = 0.357444`; agreement < 2×10⁻⁴; fitted slopes 0.5010, 1.5020 | `dpma_normal_form.py`, `dpma_saddle_node_certification.py` |
 | Sec. V, App. C | K-mode truncation: 3.046, 3.0766, 3.0764 | `mode_truncation_check.py` |
-| Sec. IV, Eq. (offgatecusp), App. C | range 1.839 < b < 3.862 at `ξ = 0.40`; cusp (0.3788, 5.816, 0.01608) and its nondegeneracy; `b_+(0.44) = 3.13660`; lower-line asymptote ratios | `dpma_offgate_phase.py`, `dpma_offgate_dense.py` |
-| Sec. IV, Eq. (startquartic) | `C_b = 4352.656`; direct solves at `δ = 10⁻³` | `dpma_start_asymptotics.py` |
+| Sec. IV, App. C | range 1.839 < b < 3.862 at `ξ = 0.40`; cusp (0.3788, 5.816, 0.01608) and its nondegeneracy; `b_+(0.44) = 3.13660`; lower-line asymptote ratios | `dpma_offgate_phase.py`, `dpma_offgate_dense.py` |
+| Sec. IV | `C_b = 4352.656`; direct solves at `δ = 10⁻³` | `dpma_start_asymptotics.py` |
 | Sec. IV, App. D | no two-peak density beyond the cusp (39 × 400 grid) | `scan_beyond_cusp.py` |
-| Sec. IV, Eqs. (cuspendpoint), (cusp-certificate-boxes) | half-line cusps; interval cusp loci (`k ≤ 120, 160, 220`) | `cusp_endpoint_continuation.py` |
+| Sec. IV | half-line cusps; interval cusp loci (`k ≤ 120, 160, 220`) | `cusp_endpoint_continuation.py` |
 | App. C | half-line transform for arbitrary release `X`: `f̂(0) = 1`, the limits `B = 0` and `X = 1`, branch-cut density against Talbot inversion | `halfline_transform_checks.py` |
 | App. C, App. D | exact rational checks of every interval-Newton inclusion and sign exclusion of the boxes `Q₋`, `Q₊`, the Krawczyk certificate, the factorization of the cusp Jacobian, and an independent double-precision cusp solve inside the boxes; the same comparisons as Lean statements | `certificate_rational_checks.py` → `formal/FormalLean/CuspCertificateDecimals.lean` |
 | App. C, App. D, Table II | Arb certificates of the two half-line cusp boxes | `halfline_cusp_interval_newton.py`, `halfline_cusp_krawczyk.py` (need `python-flint`); stored results `data/dpma_interval_certificates.json`, `data/dpma_halfline_cusp_interval_certificate.json` |
@@ -130,6 +154,8 @@ Quoted numbers (logs and tables in `outputs/tables/`):
 | Sec. VI, App. D | `R = 1` at `b = 2.821`; trials for `R > 1`, probability 0.64 of finding `R > 1` at the one-sided 5% level, factor 2.7 for probability 0.95; mean-based calibration; `κ`; gate of the example, `ℓ/L = 0.05` (exact gate, no mesh): `b_+^(ℓ)` = 3.0005, `R = 1` at `b = 2.714`, at `b = 2` `R = 1.098`, 1.6×10⁴ trials and mean 0.1346; colloid example with this finite-gate model (`κ ≃ 2.1 s⁻¹`, about 17 h) | `measurement_shape_test.py` |
 | Table II, rows 1–3 | jump condition, closed forms of `I` and `J`, normalization identity | `dpma_verification_table.py`, `test_dpma_identities.py` |
 | App. A–C, App. D (formal verification) | exact algebraic identities, the cusp Jacobian factorization, and the decimal bounds of the cusp certificates | `formal/` (Lean 4; modules 8 and 9 need no mathlib and are checked by `--full` when `lean` is installed) |
+
+</details>
 
 ## Stored data
 
@@ -152,12 +178,12 @@ The code (`code/`, `reproduce_all.py`, the Lean sources in `formal/`) and the bu
 `formal/lake-manifest.json`) are released under the MIT License (`LICENSE`). The data (`data/`),
 the figures (`figures/`) and the documentation (`README.md`, `formal/README.md`,
 `formal/axioms_report.txt`, `CITATION.cff`, `MANIFEST.csv`, `SHA256SUMS`) are released under the
-Creative Commons Attribution 4.0 International License (`LICENSE-DATA`).
+Creative Commons Attribution 4.0 International License (`LICENSE-CC-BY-4.0`).
 
 ## How to cite
 
 Please cite the article and this archive: Xiaoxiao Zhouyi, *Reproduction package for
 "Geometry-controlled disappearance of a delayed first-passage peak under localized absorption"*,
 version v1.0.1, https://github.com/zhouyi-xiaoxiao/delayed-first-passage-peak (see
-`CITATION.cff`). Verify the files from the archive root with `shasum -a 256 -c SHA256SUMS` (macOS)
+`CITATION.cff`). The main branch carries documentation and licence-file updates made after that release. Verify the files from the archive root with `shasum -a 256 -c SHA256SUMS` (macOS)
 or `sha256sum -c SHA256SUMS` (Linux).
